@@ -93,8 +93,59 @@ console.log(_.difference(noDupes, repeated));
 const n = 3; 
 const elementos = ["a", "b", "c", "d", "e", "f", "g", "h"];
 
-
-
+console.log(_.chunk(elementos, n));
 
 
 //__________________________________________
+
+// Transformar un Objeto: 
+
+const persona = { nombre: "Carlos", apellido: "Pérez", edad: 28 };
+
+console.log(_.mapKeys(persona, function(v,k) {
+    return k.toUpperCase();
+}));
+
+//Crea un objeto con los mismos valores, runs
+// each string keyed property 
+//thru iteratee.
+
+//Each iteratee is invoked with
+//(value, key, object)
+
+//__________________________________________
+
+// Aplanar un Arreglo Profundamente
+
+const anidado = [1, [2, [3, [4, 5]]], 6];
+
+console.log(_.flattenDeep(anidado));
+
+//__________________________________________
+
+// Encontrar la intersección de múltiples arreglos
+
+const lista1 = [1, 2, 3, 4, 5];
+const lista2 = [3, 4, 5, 6, 7];
+const lista3 = [5, 6, 7, 8, 9];
+
+console.log(_.intersection(lista1, lista2, lista3));
+
+
+//__________________________________________
+
+// Agrupar por propiedad dinámica : 
+
+const clave = "curso";
+const estudiantes = [
+  { nombre: "Mario", curso: "Matemáticas" },
+  { nombre: "Lucía", curso: "Historia" },
+  { nombre: "Juan", curso: "Matemáticas" },
+  { nombre: "Elena", curso: "Historia" }
+];
+
+console.log(_.groupBy(estudiantes, 'curso'));
+
+//__________________________________________
+
+// fin :3 yippee!!!!!
